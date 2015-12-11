@@ -448,7 +448,7 @@ This adapter requires the use of amazonwebservices/aws-sdk-for-php which can be 
 ```
     "require": {
         ...
-        "amazonwebservices/aws-sdk-for-php": "1.6.2"
+        "aws/aws-sdk-php": "@dev"
     },
 ```
 
@@ -520,9 +520,12 @@ services:
         factory_method: 'factory'
         arguments:
             -
-                key: %amazon_s3.key%
-                secret: %amazon_s3.secret%
+                credentials:
+                    key: %amazon_s3.key%
+                    secret: %amazon_s3.secret%
                 region: %amazon_s3.region%
+                version: %amazon_s3.version%
+
 ```
 
 ### Example
